@@ -1,4 +1,6 @@
-package org.example;public class Main {
+package org.example;
+
+public class Main {
     public static void main(String[] args) {
         Zoo zoo = new Zoo();
         zoo.addAnimal(new Cat("Tom", 1, "Black"))
@@ -31,10 +33,10 @@ package org.example;public class Main {
         }
         System.out.println("------------");
         for (Swimmable swimmer : zoo.getSwimmers()) {
-            System.out.println("The speed of swimmer is : " + swimmer.speedOfSwimm() );
+            System.out.println("The speed of swimmer is : " + swimmer.speedOfSwimm());
         }
         System.out.println("The max speed of swimmer is: " + zoo.getChampionOfSwimmers());
 
 
     }
-    }
+}
