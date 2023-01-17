@@ -7,12 +7,17 @@ public class Shark extends Animal implements Swimmable {
     }
 
     @Override
+    public String toString(){
+        return "Shark " + super.toString();
+    }
+
+    @Override
     public int speedOfSwimm() {
         return 80;
     }
 
     @Override
     public String say() {
-        return "Mute";
+        return "The fish can not speak";
     }
 }

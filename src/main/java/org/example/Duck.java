@@ -11,6 +11,11 @@ public class Duck extends Animal implements Runable, Flyable {
     }
 
     @Override
+    public String toString(){
+        return "Duck " + super.toString();
+    }
+
+    @Override
     public int speedOfFly() {
         return 40;
     }

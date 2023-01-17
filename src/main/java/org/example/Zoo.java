@@ -7,7 +7,7 @@ import java.util.List;
 public class Zoo {
 
 
-    private ArrayList<Animal>animals;
+    private ArrayList<Animal> animals;
     private Radio radio = new Radio();
 
 
@@ -19,34 +19,37 @@ public class Zoo {
         animals = new ArrayList<>();
     }
 
-    public Zoo addAnimal(Animal a){
+    public Zoo addAnimal(Animal a) {
         animals.add(a);
         return this;
     }
-    public List<Speakable> getSpeakables(){
+
+    public List<Speakable> getSpeakables() {
         List<Speakable> answer = new ArrayList<Speakable>();
-        for (Animal an:animals) {
+        for (Animal an : animals) {
             answer.add(an);
 
         }
         answer.add(radio);
         return answer;
     }
-    public List<Runable>getRunner(){
+
+    public List<Runable> getRunner() {
         List<Runable> result = new ArrayList<Runable>();
-        for (Animal an:animals) {
-            if(an instanceof Runable){
-                result.add((Runable)an);
+        for (Animal an : animals) {
+            if (an instanceof Runable) {
+                result.add((Runable) an);
             }
 
         }
 
         return result;
     }
-    public int getChampionOfRunners(){
+
+    public int getChampionOfRunners() {
         int max = 0;
-        for (Runable runner:getRunner()) {
-            if(max < runner.speedOfRun()){
+        for (Runable runner : getRunner()) {
+            if (max < runner.speedOfRun()) {
                 max = runner.speedOfRun();
             }
 
@@ -55,10 +58,10 @@ public class Zoo {
         return max;
     }
 
-    public List<Flyable> getFlyers(){
+    public List<Flyable> getFlyers() {
         List<Flyable> result = new ArrayList<Flyable>();
-        for (Animal an:animals) {
-            if(an instanceof Flyable){
+        for (Animal an : animals) {
+            if (an instanceof Flyable) {
                 result.add((Flyable) an);
             }
 
@@ -67,6 +70,27 @@ public class Zoo {
         return result;
     }
 
+    public List<Swimmable> getSwimmers() {
+        List<Swimmable> result = new ArrayList<>();
+        for (Animal an : animals) {
+            if (an instanceof Swimmable) {
+                result.add((Swimmable) an);
+            }
+        }
+        return result;
     }
+
+    public int getChampionOfSwimmers() {
+        int max = 0;
+        for (Swimmable swimmer : getSwimmers()) {
+            if (max < swimmer.speedOfSwimm()) {
+                max = swimmer.speedOfSwimm();
+            }
+
+        }
+        return max;
+    }
+
+}
 
 
